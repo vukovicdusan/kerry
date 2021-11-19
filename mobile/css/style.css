@@ -1,0 +1,361 @@
+@font-face {
+    font-family: "GothamLight";
+    src: url("./fonts/GothamLight.otf");
+  }
+  @font-face {
+      font-family: "GothamBook";
+      src: url("./fonts/GothamBook.otf");
+  }
+  @font-face {
+    font-family: "GothamBold";
+    src: url("./fonts/GothamBold.otf");
+}
+
+:root {
+    --gotham-light: "GothamLight", sans-serif;
+    --gotham-book: "GothamBook", sans-serif;
+    --gotham-bold: "GothamBold", sans-serif;
+    --main-color: #231f20;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+  body {
+   font-family: var(--gotham-light); 
+   color: var(--main-color);
+   animation: fadeIn .6s ease;
+   font-size: 14px;
+   line-height: 15px;
+   
+  }
+
+  .to__bottom--btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    border-radius: 50%;
+    padding: 0;
+    border: none;
+    -webkit-box-shadow: 0px 4px 7px 0px rgb(0 0 0 / 20%);
+            box-shadow: 0px 4px 7px 0px rgb(0 0 0 / 20%);
+    background-color: #fff;
+    z-index: 100;
+    -webkit-transition: all .4s linear;
+    -o-transition: all .4s linear;
+    transition: all .4s linear;
+    visibility: visible;
+    opacity: 1;
+  }
+  .to__bottom--btn--fade {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+
+  .mobile__header {
+    padding: 50px 30px 30px 30px;
+  }
+
+  .page__title--mobile {
+    display: none;
+  }
+
+  .content__wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    /* line-height: 18px; */
+  }
+
+  .side__wrapper {
+    position: relative;
+
+    padding: 0 30px 30px 30px;
+  }
+  .slider__wrapper {
+    width: 100%;
+    border-bottom: 1px solid #cbcdce;
+    border-top: 1px solid #cbcdce;
+    margin-bottom: 40px;
+
+  }
+  .info__wrapper {
+    margin-bottom: 28px;
+  }
+
+
+
+  .info__section {
+    margin-bottom: 25px;
+  }
+
+  .info__section:last-child {
+    margin-bottom: 0;
+  }
+
+  .info__section--title {
+    font-family: var(--gotham-bold);
+    text-transform: uppercase;
+  }
+
+  .main__title{
+    margin-bottom: 21px;
+  }
+
+  .line {
+    height: 1px;
+    background-color: #cbcdce ;
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  .notifications__list {
+    list-style: none;
+    margin-bottom: 46px;
+  }
+
+  .sign__up--wrapper {
+    height: 200px;
+  }
+
+  .sign__up--btn {
+    border: 1px solid var(--main-color);
+    width: 100%;
+    height: 33px;
+    background-color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  #form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #name, #email {
+    font-family: var(--gotham-book);
+    line-height: 16px;
+    height: 33px;
+    background-color: #f3f4f4;
+    color: #231f20;
+    margin-bottom: 6px;
+    padding-left: 5px;
+    box-sizing: border-box;
+    width: 100%;
+    border: 0;
+  }
+
+  #email {
+    margin-bottom: 0;
+  }
+
+  #name::placeholder, #email::placeholder {
+    text-transform: uppercase;
+    color: #b1b3b6;
+    font-size: 14px;
+  }
+
+  .error#email::placeholder {
+    color: red;
+  }
+
+  #submit__btn {
+    margin: 33px 0 16px 0;
+    cursor: pointer;
+    width: 100%;
+    font-family: var(--gotham-book);
+    height: 33px;
+  }
+
+  #submit__btn:disabled {
+    opacity: 0.5;
+    cursor: initial;
+  }
+  .loader__wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .loader {
+    height: 20px;
+    width: 20px;
+    object-fit: contain;
+    margin-left: 10px;
+  }
+
+  #form.hide{ display: none;}
+  .hide {
+    display: none;
+    opacity: 0;
+    font-size: 14px;
+  }
+
+  .social__icons--wrapper {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 0 30px 30px;
+  }
+  .icon--facebook, .icon--instagram {
+    background-image: url("./img/icons/icon_facebook.svg");
+    margin-right: 22px;
+    height: 18px;
+    width: 18px;
+    background-size:contain;
+    display: block;
+    background-repeat: no-repeat; 
+  }
+  .icon--instagram{
+    background-image: url("./img/icons/icon_instagram.svg");
+    margin-right: 0;
+  }
+
+ 
+/*==== CAROUSEL ====*/
+.carousel-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.carousel__photo {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.5s linear, transform 0.5s linear;
+}
+
+.current {
+  opacity: 1;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.carousel-track {
+  height: 100%;
+  position: relative;
+  transition: all 1s linear;
+}
+
+.fade-in {opacity: 1;}
+
+.carousel__button--prev,
+.carousel__button--next {
+  position: absolute;
+  top: 50%;
+  width: 3rem;
+  height: 3rem;
+  background-color: #fff;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001;
+  border: 1px solid black;
+}
+.carousel__button--prev {
+  left: 0;
+}
+.carousel__button--next {
+  right: 0;
+}
+.carousel__button--prev::after,
+.carousel__button--next::after {
+  content: " ";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 54%;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+.carousel__button--next::after {
+  left: 47%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.no-see {
+  display: none;
+}
+
+/*==== LANDSCAPE ORIENTATION ====*/
+@media (orientation: landscape) {
+* {
+  box-sizing: border-box;
+}
+  .info__wrapper {
+    padding-top: 40px;
+    margin-bottom: 40px;
+  }
+  .mobile__header {
+    display: none;
+  }
+  .page__title--mobile {
+    display: block;
+    margin-bottom: 26px;
+  }
+
+  .content__wrapper {
+    display: flex;
+    flex-direction: row;
+    line-height: 18px;
+  }
+  .side__wrapper {
+    width: 50%;
+  }
+
+  .slider__wrapper {
+    width: 50%;
+    border-left: 1px solid #cbcdce;
+    border-right: 1px solid #cbcdce;
+    border-bottom: none;
+    border-top: none;
+    margin-bottom: 0;
+    position: relative;
+  }
+  
+
+  .carousel-wrapper {
+    position: fixed;
+    top: 0;
+    left: calc(50% + 1px) ;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+  }
+}
