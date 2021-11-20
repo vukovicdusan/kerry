@@ -39,7 +39,7 @@
    min-width: 800px;
    animation: fadeIn .6s ease;
    font-size: 14px;
-   line-height: 15px;
+   line-height: 16px;
   }
 
   .content__wrapper {
@@ -57,7 +57,7 @@
     width: 100%;
   }
   .info__wrapper {
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
 
   .page__title {
@@ -117,6 +117,7 @@
     padding-left: 10px;
     box-sizing: border-box;
     border: 0;
+    padding-top: 3px;
   }
 
   #email {
